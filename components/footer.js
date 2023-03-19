@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer className={styles.footer}>
         <a>
-            Powered by {" "}
+            Thanks by {" "}
         </a>
     </footer>
   )

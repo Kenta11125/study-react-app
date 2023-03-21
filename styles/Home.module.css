@@ -38,7 +38,7 @@
   font-weight: 700;
   font-family: var(--font-mono);
 }
-.pagetitle {
+.pagetitle, .code {
   text-transform: capitalize;
 }
 

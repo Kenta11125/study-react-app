@@ -38,6 +38,9 @@
   font-weight: 700;
   font-family: var(--font-mono);
 }
+.pagetitle {
+  text-transform: capitalize;
+}
 
 .grid {
   display: grid;

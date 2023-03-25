@@ -1,14 +1,14 @@
 
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import classes from './Footer.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export function Footer() {
+export function Footer(props) {
   return (
-    <footer className={styles.footer}>
+    <footer className={classes.footer}>
         <a>
-            Powered by {" "}
+            Powered by {props.name}
         </a>
     </footer>
   )

@@ -8,10 +8,10 @@ export function Header(props) {
   return (
     <header className={classes.header}>
         <Link href="/" legacyBehavior>
-            <a className={classes.anchor}>Index</a>
+            <a className={classes.anchor}>Index Page</a>
         </Link>
         <Link href="/about" legacyBehavior>
-        <a className={classes.anchor}>About</a>
+            <a className={classes.anchor}>About Page</a>
         </Link>
     </header>
   )

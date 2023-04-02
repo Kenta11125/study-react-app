@@ -6,6 +6,7 @@ import { Footer } from 'src/components/Footer';
 import { Main } from 'src/components/Main';
 import { Header } from 'src/components/Header';
 import { useCallback } from 'react';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,12 +28,13 @@ export default function Home() {
           <title>Index Page</title>
         </Head>
         <Header />
-        <a 
-          href="/about"
-          onClick={handleClick}
-        >
-          ボタン
-        </a>
+        <Link href="/about" legacyBehavior>
+          <a 
+            onClick={handleClick}
+            >
+            ボタン
+          </a>
+        </Link>
         <Main page="index"/>
         <Footer name="COLORSDRIP"/>
      </div>

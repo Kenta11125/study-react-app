@@ -5,8 +5,7 @@ import classes from 'src/styles/Home.module.css';
 import { Footer } from 'src/components/Footer';
 import { Main } from 'src/components/Main';
 import { Header } from 'src/components/Header';
-import { useCallback, useEffect } from 'react';
-import Link from 'next/link';
+import { useEffect,useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,22 +13,23 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
-  const foooo = 1;
-  const handleClick = useCallback((e) => {
-    console.log(e.target.href);
-    e.preventDefault();
-    alert(foooo);
-  }, []);
+  const [count, setCount] = useState(1);
+
+  const handleClick = (e) => {
+    setCount((fooo) => fooo + 1);//これでも一緒　アロー関数
+    setCount((fooo) => fooo + 1);//これでも一緒　アロー関数
+    // setFoo(function(foo) {
+    //   return foo + 1;
+    // });
+
+  };
   useEffect(() => {
-    console.log('マウント時');
     document.body.style.backgroundColor = "darkblue";
 
     return () => {
-      console.log('アンマウント時');
       document.body.style.backgroundColor = "";
     };
   },[]);
-
   return (
      <> {/* <React.Fragment> と同じ意味 import React from 'react を呼び出してから使う*/}
      <div className={classes.container}>
@@ -37,13 +37,10 @@ export default function Home() {
           <title>Index Page</title>
         </Head>
         <Header />
-        <Link href="/about" legacyBehavior>
-          <a 
-            onClick={handleClick}
-            >
+        <h1>{count}</h1>
+          <button onClick={handleClick}>
             ボタン
-          </a>
-        </Link>
+          </button>
         <Main page="index"/>
         <Footer name="COLORSDRIP"/>
      </div>

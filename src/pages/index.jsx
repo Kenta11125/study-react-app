@@ -13,11 +13,11 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
-  const foo = 1;
+  const foooo = 1;
   const handleClick = useCallback((e) => {
     console.log(e.target.href);
     e.preventDefault();
-    alert(foo);
+    alert(foooo);
   }, []);
 
   return (

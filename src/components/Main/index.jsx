@@ -6,9 +6,15 @@ import { Links } from 'src/components/Links/';
 import { Logo } from 'src/components/MainLogo';
 import { Headline } from 'src/components/Headline';
 
+
 const inter = Inter({ subsets: ['latin'] })
 
 export function Main(props) {
+
+
+
+
+
   return (
      <> {/* <React.Fragment> と同じ意味 import React from 'react を呼び出してから使う*/}
       <main className={classes.main}>

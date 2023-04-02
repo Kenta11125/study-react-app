@@ -5,7 +5,7 @@ import classes from 'src/styles/Home.module.css';
 import { Footer } from 'src/components/Footer';
 import { Main } from 'src/components/Main';
 import { Header } from 'src/components/Header';
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] })
@@ -20,6 +20,15 @@ export default function Home() {
     e.preventDefault();
     alert(foooo);
   }, []);
+  useEffect(() => {
+    console.log('マウント時');
+    document.body.style.backgroundColor = "darkblue";
+
+    return () => {
+      console.log('アンマウント時');
+      document.body.style.backgroundColor = "";
+    };
+  },[]);
 
   return (
      <> {/* <React.Fragment> と同じ意味 import React from 'react を呼び出してから使う*/}

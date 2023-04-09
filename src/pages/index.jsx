@@ -19,7 +19,7 @@ export default function Home() {
 
   const handleClick = useCallback(() => {
     if (count < 10) {
-      setCount((foo) => foo + 1);//これでも一緒　アロー関数
+      setCount((prevCount) => prevCount + 1);//これでも一緒　アロー関数
     }
     // setFoo(function(foo) {
     //   return foo + 1;

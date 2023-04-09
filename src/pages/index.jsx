@@ -16,6 +16,7 @@ export default function Home() {
   const [count, setCount] = useState(1);
   const [text, setText] = useState("");
   const [isShow, setIsShow] = useState(true);
+  const [array, setArray] = useState([]);
 
   const handleClick = useCallback(() => {
     if (count < 10) {
@@ -35,6 +36,18 @@ export default function Home() {
       setText(foo.target.value.trim());
   }, []);
 
+  const handleAdd = useCallback(() => {
+    setArray((prevArray) => {
+      if (prevArray.some(item => item === text)) {
+        alert(`『${text}』はすでに存在します。違う要素を追加してください。`);
+        return prevArray;
+      }
+      // const newArray = [...prevArray, text];
+      // return newArray;
+      return [...prevArray, text];
+    });
+  }, [text]);
+
   const handleDisplay = useCallback(() => {
                 // setIsShow((isShow) => {
               //   // if(isShow) {
@@ -44,7 +57,7 @@ export default function Home() {
               //   // return isShow ? false : true;
               //   return !isShow;
               // });
-              setIsShow((isShow) => !isShow);
+              setIsShow((prevIsShow) => !prevIsShow);
   }, []);
 
   useEffect(() => {
@@ -79,6 +92,13 @@ export default function Home() {
           value={text} 
           onChange={handleChange}
           />
+          <br></br>
+          <button onClick={handleAdd}>配列追加</button>
+          <ul>
+            {array.map(item => {
+              return <li key={item}>{item}</li>;
+            })}
+          </ul>
         <Main page="index"/>
         <Footer name="COLORSDRIP"/>
      </div>

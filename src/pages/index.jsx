@@ -27,7 +27,7 @@ export default function Home() {
 
         {isShow ? <h1>{count}</h1> : null}
           <button onClick={handleClick}>
-            ボタン
+            クリック
           </button>
           <br></br>
           <button onClick={handleDisplay}>{isShow ? "非表示" : "表示"}</button>

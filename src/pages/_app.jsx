@@ -12,8 +12,14 @@
 
 import 'src/styles/globals.css';
 import Head from 'next/head'
+import { useBgblue } from 'src/hooks/useBgblue';
+import { useCounter } from 'src/hooks/useCounter';
+import { useInputArray } from 'src/hooks/useInputArray';
 
 function MyApp({ Component, pageProps }) {
+  const counter = useCounter(); 
+  const inputArray = useInputArray();
+  useBgblue();
   return (
     <>
       <Head>
@@ -22,7 +28,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-    <Component {...pageProps} />
+    <Component {...pageProps} {...counter} {...inputArray} />
     </>
 
   );

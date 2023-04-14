@@ -11,7 +11,8 @@ const inter = Inter({ subsets: ['latin'] })
 export default function About(props) {
 
   const {
-    count,
+    // count,
+    doubleCounter,
     isShow,
     handleClick,
     handleDisplay,
@@ -28,7 +29,8 @@ export default function About(props) {
       </Head>
       <Header />
 
-      {isShow ? <h1>{count}</h1> : null}
+      {/* {isShow ? <h1>{count}</h1> : null} */}
+      {isShow ? <h1>{doubleCounter}</h1> : null}
           <button onClick={handleClick}>
             ボタン
           </button>

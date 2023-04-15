@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Header } from 'src/components/Header';
 
-function App() {
+const App= () => {
   // useStateでカウントの初期値を0に設定
   const [count, setCount] = useState(0);
 

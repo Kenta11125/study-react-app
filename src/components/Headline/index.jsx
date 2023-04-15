@@ -4,7 +4,7 @@ import classes from 'src/components/Headline/Headline.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export function Headline(props) {
+export const Headline= (props) => {
   return (
     <div>
         <p>

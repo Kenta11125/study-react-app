@@ -4,7 +4,7 @@ import classes from 'src/components/Footer/Footer.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export function Footer(props) {
+export const Footer = (props) => {
   return (
     <footer className={classes.footer}>
         <a>

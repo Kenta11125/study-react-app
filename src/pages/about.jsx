@@ -8,19 +8,7 @@ import { Header } from "src/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function About(props) {
-  const {
-    // count,
-    doubleCounter,
-    isShow,
-    handleClick,
-    handleDisplay,
-    text,
-    array,
-    handleChange,
-    handleAdd,
-  } = props;
-
+const About = (props) => {
   return (
     <>
       <Head>
@@ -29,17 +17,19 @@ export default function About(props) {
       <Header />
 
       {/* {isShow ? <h1>{count}</h1> : null} */}
-      {isShow ? <h1>{doubleCounter}</h1> : null}
-      <button onClick={handleClick}>ボタン</button>
+      {props.isShow ? <h1>{props.doubleCounter}</h1> : null}
+      <button onClick={props.handleClick}>ボタン</button>
       <br></br>
-      <button onClick={handleDisplay}>{isShow ? "非表示" : "表示"}</button>
+      <button onClick={props.handleDisplay}>
+        {props.isShow ? "非表示" : "表示"}
+      </button>
 
       <br></br>
-      <input type="text" value={text} onChange={handleChange} />
+      <input type="text" value={props.text} onChange={props.handleChange} />
       <br></br>
-      <button onClick={handleAdd}>配列追加</button>
+      <button onClick={props.handleAdd}>配列追加</button>
       <ul>
-        {array.map((item) => {
+        {props.array.map((item) => {
           return <li key={item}>{item}</li>;
         })}
       </ul>
@@ -48,4 +38,6 @@ export default function About(props) {
       <Footer name="COLORSDRIP" />
     </>
   );
-}
+};
+
+export default About;

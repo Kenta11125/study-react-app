@@ -21,7 +21,7 @@ export const TestList = [
   },
 ];
 
-function App() {
+const Todo = () => {
   const [testList, setTestList] = useState(TestList);
   const onDragEndTest = (result) => {
     const items = [...testList];
@@ -69,4 +69,4 @@ function App() {
     </div>
   );
 }
-export default App;
+export default Todo;

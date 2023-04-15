@@ -16,6 +16,9 @@ export function Header(props) {
         <Link href="/test" legacyBehavior>
             <a className={classes.anchor}>Test Page</a>
         </Link>
+        <Link href="/todos" legacyBehavior>
+            <a className={classes.anchor}>Todos Page</a>
+        </Link>
     </header>
   )
 }
